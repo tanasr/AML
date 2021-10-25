@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import scipy as sp
-import sklearn as sk
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 """
@@ -18,10 +16,8 @@ data_test = pd.read_csv("test.csv")
 x_train = data_train.drop(['Id','y'],axis=1)
 y_train = data_train['y']
 
-# create LinearRegression model
-LR = LinearRegression()
-LR.fit(x_train,y_train)
-
+# create LinearRegression model and fit to data
+LR = LinearRegression().fit(x_train,y_train)
 
 # get observations to test the model
 x_test = data_test.drop('Id',axis=1)
