@@ -5,11 +5,7 @@ import sklearn as sk
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 """
-example = np.array([9,9,9])
-squareroot = np.sqrt(example)
-print(squareroot)
-
-iris = datasets.load_iris()
+task0 - Linear Regression problem
 """
 
 #load data sets
