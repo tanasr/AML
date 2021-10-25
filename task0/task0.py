@@ -3,7 +3,6 @@ import pandas as pd
 import scipy as sp
 import sklearn as sk
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 """
 example = np.array([9,9,9])
