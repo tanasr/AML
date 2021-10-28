@@ -8,10 +8,11 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
 
-
 #load data sets
 data_train = pd.read_csv("train.csv")
+# print(data_train.head())
 data_test = pd.read_csv("test.csv")
+# print(data_train.head())
 #print(np.mean(train.iloc[0][2:12]))
 #X = train.iloc[0][2:12]
 
@@ -29,7 +30,11 @@ x_test = data_test.drop('Id',axis=1)
 y_id = data_test['Id']
 y_prediction =  LR.predict(x_test)
 
-#create results which will be submitted 
+r_sq = LR.score(x_test, y_prediction)
+print('The model score is: '+str(r_sq))
+
+
+#Create submission
 y_prediction = pd.DataFrame(y_prediction,columns=['y'])
 submission = pd.concat([y_id,y_prediction],axis=1)
 
@@ -37,6 +42,7 @@ submission = pd.concat([y_id,y_prediction],axis=1)
 y_test = np.mean(np.transpose(x_test))
 RMSE = mean_squared_error(y_test, y_prediction)**0.5
 print('the error is: ' + str(RMSE))
+
 # submission.to_csv('out.csv',index=False)
 
 
